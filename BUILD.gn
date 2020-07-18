@@ -3839,6 +3839,10 @@ v8_component("v8_libbase") {
     data += [ "tools/sanitizers/tsan_suppressions.txt" ]
   }
 
+  if (v8_current_cpu == "riscv64") {
+    libs += [ "atomic" ]
+  }
+
   # TODO(jochen): Add support for qnx, freebsd, openbsd, netbsd, and solaris.
 }
 
